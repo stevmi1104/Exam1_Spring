@@ -8,8 +8,8 @@ difficult elements as time permits.
 Every student should be able to print the string and the
 length of the string.  If you don't remember how, LOOK at
 your programming sessions!!!   
-PUT YOUR NAME HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+Mike Stevens.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -59,10 +59,58 @@ def test_problem2():
     print('Test case 1 Actual: ')
     problem3(string_of_characters)
     print('*********************************************')
-    # TODO: 2. Write at least three reasonable test cases below.
+    # done: 2. Write at least three reasonable test cases below.
     #         Three excellent test cases are worth 10 points
+    #  Test case 2
+    print('*********************************************')
+    print('Test case 2 Expected: ')
+    print('*********************************************')
+    string_of_characters = 'mike'
+    print('String entered: ', string_of_characters)
+    print('Length of string: ', 4)
+    print('Number of alphabetic characters: ', 4)
+    print('Number of digits: ', 0)
+    print('Reversed string is: ekim')
+    print('The user entered a normal string')
+    print()
+    print('*********************************************')
+    print('Test case 2 Actual: ')
+    problem3(string_of_characters)
+    print('*********************************************')
 
+    #  Test case 3
+    print('*********************************************')
+    print('Test case 3 Expected: ')
+    print('*********************************************')
+    string_of_characters = 'anna'
+    print('String entered: ', string_of_characters)
+    print('Length of string: ', 4)
+    print('Number of alphabetic characters: ', 4)
+    print('Number of digits: ', 0)
+    print('Reversed string is: anna')
+    print('The user entered a palindrome')
+    print()
+    print('*********************************************')
+    print('Test case 3 Actual: ')
+    problem3(string_of_characters)
+    print('*********************************************')
 
+    #  Test case 4
+    print('*********************************************')
+    print('Test case 4 Expected: ')
+    print('*********************************************')
+    string_of_characters = 'hannah'
+    print('String entered: ', string_of_characters)
+    print('Length of string: ', 6)
+    print('Number of alphabetic characters: ', 6)
+    print('Number of digits: ', 0)
+    print('Reversed string is: hannah')
+    print('The user entered a palindrome')
+    print()
+    print('*********************************************')
+    print('Test case 4 Actual: ')
+    problem3(string_of_characters)
+    print('*********************************************')
 def problem3(string_of_characters):
     """
     What comes in:
@@ -121,17 +169,31 @@ def problem3(string_of_characters):
        Reversed string: b21a
        The user entered a normal string
     """
-    # TODO: 3. Implement this function.
+    #done T: 3. Implement this function.
     # To implement this function, you need to reverse a string.
     # If you write your own method to reverse a string and solve
     # the entire problem, you will get 25 points. If you use the
     # provided method reverseString(string),you will get 20 points
-
+    numbers = 0
+    letters = 0
+    reverse = ""
+    for k in range(len(string_of_characters)-1, -1, -1):
+        if string_of_characters[k] == "k":
+            numbers = numbers + 1
+        else:
+            letters = letters + 1
+        reverse = reverse + string_of_characters[k]
+    print("Number of alphabetic characters: ", str(letters))
+    print("Number of digits: ", str(numbers))
+    print("Reversed string: ", reverse)
+    if reverse == string_of_characters:
+        print("The user entered a palindrome")
+    else:
+        print("The user entered a normal string")
 # -----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
 # imported by another module), then call the 'main' function.
 # -----------------------------------------------------------------------
-
 
 if __name__ == '__main__':
     main()
